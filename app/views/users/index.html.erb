@@ -6,4 +6,7 @@
       <th>Striche</th>
     </tr>
   </thead>
+  <% @users.each do |user| %>
+  <td><%= user.userID %> </td>
+  <% end %>
 </table>
