@@ -14,6 +14,13 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid?
   end
 
+  test "dub user should be invalid" do
+    dup_user = @user.dup
+    dup_user.userID.upcase!
+    @user.save
+    assert_not dup_user.valid?
+  end
+
   # test "the truth" do
   #   assert true
   # end
