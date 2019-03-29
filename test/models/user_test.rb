@@ -21,6 +21,12 @@ class UserTest < ActiveSupport::TestCase
     assert_not dup_user.valid?
   end
 
+  test "userID shold be saved in upcase" do
+    uID = "AsDf"
+    @user.userID = uID
+    @user.save
+    assert_equal uID.upcase, @user.reload.userID
+  end
   # test "the truth" do
   #   assert true
   # end
