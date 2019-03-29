@@ -10,11 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_23_001937) do
+ActiveRecord::Schema.define(version: 2019_03_28_211318) do
 
   create_table "tallies", force: :cascade do |t|
-    t.string "new"
-    t.string "show"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -23,6 +21,7 @@ ActiveRecord::Schema.define(version: 2019_03_23_001937) do
     t.string "userID"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["userID"], name: "index_users_on_userID", unique: true
   end
 
 end
