@@ -8,6 +8,12 @@ class UserTest < ActiveSupport::TestCase
   test "not empty uiserID should be valid" do
     assert @user.valid?
   end
+
+  test "userID should be present" do
+    @user.userID = "   "
+    assert_not @user.valid?
+  end
+
   # test "the truth" do
   #   assert true
   # end
