@@ -1,5 +1,5 @@
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>UserID</th>
@@ -7,6 +7,9 @@
     </tr>
   </thead>
   <% @users.each do |user| %>
-  <td><%= user.userID %> </td>
+  <tr>
+    <td><%= user.userID %> </td>
+    <td><%= user.tallies.count %> </td>
+  </tr>
   <% end %>
 </table>
