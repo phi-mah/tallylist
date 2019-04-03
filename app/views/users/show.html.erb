@@ -1,2 +1,10 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1>Hello <%= @user.userID %></h1>
+
+<div class="row">
+  <div class="col-md-offset-4 col-md-4">
+  </div>
+</div>
+
+<div class="row">
+  your tallies: <%= @user.tallies.count %>
+</div>
