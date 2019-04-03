@@ -7,5 +7,12 @@ class UsersController < ApplicationController
   end
 
   def show
+    uID = params["userID"].upcase
+    @user = User.find_by userID: uID
+    if !!(@user)
+      render :show
+    else
+      render :new
+    end
   end
 end
